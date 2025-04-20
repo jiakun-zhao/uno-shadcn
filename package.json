@@ -1,0 +1,50 @@
+{
+  "name": "@jiakun-zhao/uno-shadcn",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Jiakun Zhao <hi@zhaojiakun.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/jiakun-zhao/uno-shadcn#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiakun-zhao/uno-shadcn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jiakun-zhao/uno-shadcn/issues"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "commit": "git add . && git commit -m \"chore: release ${npm_package_version}\"",
+    "oxlint-migrate": "pnpm dlx @oxlint/migrate",
+    "prepublishOnly": "pnpm build",
+    "release": "pnpm version patch -no-git-tag-version && pnpm build && pnpm commit && pnpm publish && npx cnpm sync ${npm_package_name} && git push"
+  },
+  "peerDependencies": {
+    "unocss": "66.1.0-beta.12"
+  },
+  "devDependencies": {
+    "@jiakun-zhao/eslint-config": "^4.0.10",
+    "@types/node": "^22.14.1",
+    "eslint": "^9.25.0",
+    "eslint-plugin-oxlint": "^0.16.6",
+    "oxlint": "^0.16.6",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "unbuild": "^3.5.0",
+    "unocss": "66.1.0-beta.12",
+    "vitest": "^3.1.1"
+  }
+}
