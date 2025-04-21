@@ -2,7 +2,7 @@ import type { Preset } from 'unocss'
 import type { Theme } from 'unocss/preset-mini'
 import css from './style.css'
 
-export default function(): Preset<Theme> {
+export function presetShadcn(): Preset<Theme> {
   return {
     name: 'uno-shadcn',
     preflights: [{
